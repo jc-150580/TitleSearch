@@ -17,7 +17,8 @@ namespace Json
     {
         private string url;
         static string requestUrl;
-        private Entry isbn;
+        private Entry titleName;
+        
         /*
         public MainPage()
         {
@@ -61,6 +62,7 @@ namespace Json
 
             var layout = new StackLayout { HorizontalOptions = LayoutOptions.CenterAndExpand, VerticalOptions = LayoutOptions.CenterAndExpand };
 
+            /*
             isbn = new Entry    //EntryでISBNコードを入力
             {
                 //Placeholder = "ISBNコードを入力",
@@ -69,9 +71,19 @@ namespace Json
                 WidthRequest = 170
             };
             layout.Children.Add(isbn);
-
             //実行url https://app.rakuten.co.jp/services/api/BooksBook/Search/20170404?format=json&applicationId=1051637750796067320&formatVersion=2&isbn=9784838729036
-            
+            */
+
+            titleName = new Entry
+            {
+                Placeholder = "タイトルを入力",
+                PlaceholderColor = Color.Gray,
+                WidthRequest = 170
+            };
+            layout.Children.Add(titleName);
+
+         
+
             var Serch = new Button
             {
                 WidthRequest = 60,
@@ -95,18 +107,20 @@ namespace Json
                 var layout = new StackLayout { HorizontalOptions = LayoutOptions.CenterAndExpand, VerticalOptions = LayoutOptions.CenterAndExpand };
                 scroll.Content = layout;
 
-                string isbncode = isbn.Text;
-                requestUrl = url + "&isbn=" + isbncode; //URLにISBNコードを挿入
+                string Title = titleName.Text;
+                string encodedtitle = Uri.EscapeUriString(Title); //Systemアセンブリ中に存在 UTF-8のみ
+                requestUrl = url + "&title=" + encodedtitle; 
+
+              
 
                 //------------------------------ボタン再配置--------------------------
-                isbn = new Entry    //EntryでISBNコードを入力
+                titleName = new Entry  
                 {
-                    /*Placeholder = "ISBNコードを入力",
-                    PlaceholderColor = Color.Gray,*/
-                    Text = "9784838729036", //面倒だからTextでISBN設定
+                    Placeholder = "タイトルを入力",
+                    PlaceholderColor = Color.Gray,
                     WidthRequest = 170
                 };
-                layout.Children.Add(isbn);
+                layout.Children.Add(titleName);
 
                 var Serch = new Button
                 {
@@ -116,6 +130,7 @@ namespace Json
                 };
                 layout.Children.Add(Serch);
                 Serch.Clicked += Serch_Click;
+            　　
                 //-------------------------------ボタン再配置--------------------------
 
                 //HTTPアクセスメソッドを呼び出す
@@ -178,6 +193,7 @@ namespace Json
             }
             catch (Exception x) { await DisplayAlert("警告", x.ToString(), "OK"); }
         }
+
 
         //HTTPアクセスメソッド
         public static async Task<string> GetApiAsync()

@@ -145,9 +145,9 @@
     <AndroidResource Include="Resources\values\styles.xml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Json\Json.csproj">
-      <Project>{876e2e61-f201-48d2-a7cd-770779bf37e0}</Project>
-      <Name>Json</Name>
+    <ProjectReference Include="..\Json\TitleSearch.csproj">
+      <Project>{3D6FEAAA-1852-45D1-823F-F6D918AF3B19}</Project>
+      <Name>TitleSearch</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

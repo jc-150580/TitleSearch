@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27004.2006
+VisualStudioVersion = 15.0.27004.2002
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Json.Android", "Json\Json.Android\Json.Android.csproj", "{CC8C8D94-ABB6-42FC-9F8E-582F40D32FD9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TitleSearch.Android", "Json\Json.Android\TitleSearch.Android.csproj", "{CC8C8D94-ABB6-42FC-9F8E-582F40D32FD9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Json", "Json\Json\Json.csproj", "{3D6FEAAA-1852-45D1-823F-F6D918AF3B19}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TitleSearch", "Json\Json\TitleSearch.csproj", "{3D6FEAAA-1852-45D1-823F-F6D918AF3B19}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Json.iOS", "Json\Json.iOS\Json.iOS.csproj", "{F903B0AD-8DFE-4A9C-9387-F1DDB55F2455}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TitleSearch.iOS", "Json\Json.iOS\TitleSearch.iOS.csproj", "{F903B0AD-8DFE-4A9C-9387-F1DDB55F2455}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
